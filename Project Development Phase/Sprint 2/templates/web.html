@@ -91,7 +91,7 @@
         display: inline-block;
       }
 
-      .upload-btn-wrapper input[type=file] {
+      .upload-btn-wrapper input[type="file"] {
         font-size: 100px;
         position: absolute;
         left: 0;
@@ -99,13 +99,13 @@
         opacity: 0;
       }
 
-      .upload-btn-wrapper input[type=file]:not([disabled]):focus {
+      .upload-btn-wrapper input[type="file"]:not([disabled]):focus {
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
           -0.125rem -0.125rem 1rem rgba(130, 205, 71, 1),
           0.125rem 0.125rem 1rem rgba(130, 205, 71, 0.5);
       }
 
-      .upload-btn-wrapper input[type=file]:not([disabled]):hover {
+      .upload-btn-wrapper input[type="file"]:not([disabled]):hover {
         box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
           -0.125rem -0.125rem 1rem rgba(130, 205, 71, 1),
           0.125rem 0.125rem 1rem rgba(130, 205, 71, 0.5);
@@ -114,16 +114,16 @@
   </head>
   <body>
     <div class="nav">
-      <a class="a-home" href="index.html">Home</a>
-      <a class="a-rec" href="web.html">Recognize</a>
+      <a class="a-home" href="/">Home</a>
+      <a class="a-rec" href="/upload">Recognize</a>
     </div>
     <h1 class="heading">Digit Recognition</h1>
-    <div class="button">
+    <form action="/predict" method="POST" enctype="multipart/form-data">
       <div class="upload-btn-wrapper">
         <button class="button-62">Choose</button>
-        <input type="file" name="myFile" />
+        <input type="file" id="fileButton" name="file" />
       </div>
-      <button class="button-62" type="submit">Recognize</button>
-    </div>
+      <input class="button-62" type="submit">
+    </form>
   </body>
 </html>
