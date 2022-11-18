@@ -40,6 +40,11 @@
         line-height: 1.5;
         padding: 20px;
       }
+      .form-container{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 50px;
+      }
       body {
         background-image: url("../static/images/bg1.jfif");
         background-repeat: no-repeat;
@@ -118,7 +123,7 @@
       <a class="a-rec" href="/upload">Recognize</a>
     </div>
     <h1 class="heading">Digit Recognition</h1>
-    <form action="/predict" method="POST" enctype="multipart/form-data">
+    <form class="form-container" action="/predict" method="POST" enctype="multipart/form-data">
       <div class="upload-btn-wrapper">
         <button class="button-62">Choose</button>
         <input type="file" id="fileButton" name="file" />

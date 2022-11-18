@@ -20,18 +20,12 @@ def upload_file2():
 def upload_image_file():
     if request.method == 'POST':
         model = load_model(r'models/mnistCNN.h5')
-        # print("Files-------------")
-        # print("------------------")
-        # print(request.files.keys[0])
-        # print("------------------")
-        # print("------------------")
         img = Image.open(request.files['file'].stream).convert("L")
         img = img.resize((28, 28))
         im2arr = np.array(img)
         im2arr = im2arr.reshape(1, 28, 28, 1)
         y_pred = model.predict(im2arr)
         result = np.argmax(y_pred, axis=1)
-        print(result)
 
         if (result == 0):
             return render_template("0.html", showcase=str(result))
